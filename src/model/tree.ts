@@ -70,10 +70,7 @@ export const merge = (node: NewNode, tree: Node): Node => {
 
   // Tree did not exist before
   if (!tree.bytes[currentByte]) {
-    tree.bytes[currentByte] = {
-      ...tree.bytes[currentByte],
-      ...createComplexNode(node.typename, path, node.info),
-    };
+    tree.bytes[currentByte] = createComplexNode(node.typename, path, node.info);
   }
   return tree;
 };
